@@ -1,0 +1,24 @@
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:51] - 开始读取配置文件！
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:66] - url=jdbc:oracle:thin:@127.0.0.1:1521:orcl
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:67] - username=scott
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:68] - password=tiger
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:92] - 正在加载数据库驱动...
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:97] - 开始建立数据库连接...
+[2018-06-27 09:30:28] INFO  com.sunhongjiang.frontiercrops.util.DBHelper.getConnection[:101] - 建立数据库连接完成！
+[2018-06-27 09:30:28] ERROR com.sunhongjiang.frontiercrops.dao.impl.StudentDaoImpl.addStudent[:44] - Catching
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: 违反唯一约束条件 (SCOTT.SYS_C0011053)
+
+	at oracle.jdbc.driver.SQLStateMapping.newSQLException(SQLStateMapping.java:85) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.DatabaseError.newSQLException(DatabaseError.java:133) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:206) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:455) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:413) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.T4C8Oall.receive(T4C8Oall.java:1034) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:194) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:953) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1222) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3387) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3468) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1350) ~[ojdbc6.jar:Oracle JDBC Driver version - "11.1.0.7.0-Production"]
+	at com.sunhongjiang.frontiercrops.dao.impl.StudentDaoImpl.addStudent(StudentDaoImpl.java:39) [classes/:?]
+	at com.sunhongjiang.frontiercrops.dao.impl.StudentDaoImpl.main(StudentDaoImpl.java:21) [classes/:?]
