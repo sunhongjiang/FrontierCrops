@@ -3,9 +3,11 @@ package com.sunhongjiang.frontiercrops.dao;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sunhongjiang.frontiercrops.entity.Apply;
 
+@Transactional
 @Repository("applyDaoImpl")
 public interface ApplyDao {
 	// 审核

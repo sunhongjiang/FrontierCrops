@@ -14,9 +14,11 @@
 	<!-- 【配置视图解析器】 -->
 	<!-- InternalResourceViewResolver会在ModelAndView返回的视图名前加上prefix指定的前缀，再在最后加上suffix指定的后缀 -->
 	<!-- 由于UserController返回的ModelAndView中的视图名是userlist，故该视图解析器将在/WEB-INF/jsp/userlist.jsp处查找视图 -->
-	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
-		<property name="prefix" value="/WEB-INF/jsp/"/> <property name="suffix" value=".jsp"/> 
-		</bean> -->
+	<!-- <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean> -->
 
 	<!-- 导入springMvc.xml配置文件 -->
 	<import resource="classpath:config/spring-mvc.xml" />
@@ -80,7 +82,7 @@
 				<prop key="hibernate.validator.apply_to_ddl">false</prop>
 				<prop key="hibernate.validator.autoregister_listeners">false</prop>
 				<prop key="hibernate.connection.release_mode">after_transaction</prop>
-				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>  
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
 				<!--<prop key="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</prop> -->
 			</props>
 		</property>
@@ -90,10 +92,10 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- 启用spring注解 -->
 	<context:annotation-config></context:annotation-config>
-	
+
 	<!-- 扫描com.cheer.spring包（包含其子包）下所有带有注解的类（@Repository @Service @Component 
 		@Controller） -->
 	<context:component-scan base-package="com.sunhongjiang.frontiercrops">
@@ -101,11 +103,14 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-	
+
 	<!-- 配置事务管理器 -->
-	<bean id="txManager"
+	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<!-- 启用spring注解事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 </beans>  

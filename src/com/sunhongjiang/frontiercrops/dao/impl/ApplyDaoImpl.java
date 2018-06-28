@@ -47,10 +47,11 @@ public class ApplyDaoImpl extends HibernateDaoSupport implements ApplyDao {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Apply> searchAll() {
 		String hql = "SELECT a FROM Apply a";
-		return sf.getCurrentSession().createQuery(hql).setCacheable(true).list();
+		return sf.getCurrentSession().createQuery(hql).list();
 
 	}
 
